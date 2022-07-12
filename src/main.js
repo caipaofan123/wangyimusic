@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import App from './App.vue';
-import './assets/styles/reset.css';
-import './assets/mobile/flexible.js';
-import router from './router';
+import Vue from "vue"
+import App from "./App.vue"
+import "./assets/styles/reset.css"
+import "./assets/mobile/flexible.js"
+import router from "./router"
 import {
   NavBar,
   Tabbar,
@@ -17,22 +17,22 @@ import {
   Search,
   List,
   Toast,
-} from 'vant';
+} from "vant"
 
-Vue.use(NavBar);
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
-Vue.use(Cell);
-Vue.use(CellGroup);
-Vue.use(Grid);
-Vue.use(GridItem);
-Vue.use(VanImage);
-Vue.use(Icon);
-Vue.use(Tag);
-Vue.use(Search);
-Vue.use(List);
-Vue.use(Toast);
-Vue.config.productionTip = false;
+Vue.use(NavBar)
+Vue.use(Tabbar)
+Vue.use(TabbarItem)
+Vue.use(Cell)
+Vue.use(CellGroup)
+Vue.use(Grid)
+Vue.use(GridItem)
+Vue.use(VanImage)
+Vue.use(Icon)
+Vue.use(Tag)
+Vue.use(Search)
+Vue.use(List)
+Vue.use(Toast)
+Vue.config.productionTip = false
 // import { getRecommendListApi } from '@/apis';//不能算全局的方法，要设置过，像Vue.use(NavBar);
 // async function fn() {
 //   try {
@@ -46,7 +46,9 @@ Vue.config.productionTip = false;
 //   }
 // }
 // fn();
+let a = 1
+// console.log(a)
 new Vue({
   router,
   render: (h) => h(App),
-}).$mount('#app');
+}).$mount("#app")

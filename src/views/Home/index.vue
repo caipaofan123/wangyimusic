@@ -11,7 +11,7 @@
       </van-grid-item>
     </van-grid>
     <van-cell title="最佳匹配" />
-    <van-cell
+    <!-- <van-cell
       :label="
         (item.song && item.song.artists[0] && item.song.artists[0].name) ||
         '未知歌手'
@@ -23,11 +23,18 @@
       <template>
         <van-icon color="#000" name="play-circle-o" size="28" />
       </template>
-    </van-cell>
+    </van-cell> -->
+    <SongItem v-for="(item) in newSongList" 
+        :key="item.id" 
+        :id="item.id"
+        :name="item.name" 
+        :author="(item.song && item.song.artists[0] && item.song.artists[0].name) ||
+        '未知歌手'"></SongItem>
   </div>
 </template>
 
 <script>
+import SongItem from '@/components/SongItem.vue';
 import { getRecommendListApi, getNewSongApi } from '@/apis';
 
 export default {
@@ -39,7 +46,9 @@ export default {
       newSongList: [],
     };
   },
-
+  components:{
+    SongItem,
+  },
   mounted() {
     this.getPersonalized();
     this.getNewSong();
@@ -75,7 +84,8 @@ export default {
 <style lang="less" scoped>
 .home-container {
   .title {
-    background-color: #c71d24;
+    // background-color: #c71d24;
+    background-color: rgb(211, 62, 211);
     color: #fff;
   }
 
